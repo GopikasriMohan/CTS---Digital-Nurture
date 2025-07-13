@@ -1,0 +1,54 @@
+**SME to explain the following aspects:**
+•	What happens in the controller method?
+•	How the bean is converted into JSON reponse?
+•	In network tab of developer tools show the HTTP header details received
+•	In postman click on "Headers" tab to view the HTTP header details received
+
+**1.What happens in the controller method?**
+The method getCountryIndia() is called when a GET request is made to /country.
+
+It uses the Spring ApplicationContext to fetch the india bean (which is configured in XML).
+
+The Country object is returned by the method.
+
+Because the class is annotated with @RestController, Spring uses HttpMessageConverters (Jackson JSON converter by default) to automatically serialize the Country object into JSON format in the HTTP response.
+
+**2.How is the bean converted into JSON response?**
+Spring Boot includes Jackson (a JSON library).
+
+When the controller returns a Java object, the MappingJackson2HttpMessageConverter intercepts the response.
+
+It converts the Java object (Country) into JSON format.
+
+The resulting JSON string is sent as the HTTP response body with Content-Type: application/json.
+
+Example output:
+
+{
+  "code": "IN",
+  "name": "India"
+}
+
+**3. HTTP Headers in Network Tab (Browser Developer Tools)**
+When you open browser dev tools (F12) → Network → Click on the /country request, you can observe the HTTP response headers such as:
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 29
+Date: Sun, 13 Jul 2025 20:00:00 GMT
+Content-Type: application/json indicates the server sends JSON data.
+
+Status 200 means OK.
+
+**4. HTTP Headers in Postman (Headers Tab)**
+In Postman, after sending the GET request to http://localhost:8085/country:
+
+Go to Headers tab.
+
+You will see response headers like:
+
+Key	            Value
+Content-Type	application/json
+Content-Length	29
+Date	        Sun, 10 Jul 2025 ...
+
