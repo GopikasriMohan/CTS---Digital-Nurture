@@ -1,0 +1,27 @@
+**SME to explain the following aspects:**
+
+•	In network tab of developer tools show the HTTP header details received
+
+•	In postman click on "Headers" tab to view the HTTP header details received
+
+**Network Tab in Browser Developer Tools:**
+
+• Open browser dev tools (F12).
+
+• Go to the Network tab.
+
+• Refresh the /hello request.
+
+• Click on the request to see HTTP details.
+
+• You will see request headers like GET /hello, Host, User-Agent, Accept, etc.
+
+• Also see response headers like Content-Type: text/plain;charset=UTF-8, Content-Length, Date, etc.
+
+**Postman Headers Tab:**
+
+• Make a GET request to http://localhost:8083/hello.
+
+• Click on the Headers tab.
+
+• You'll see the request headers sent by Postman (like User-Agent, Accept) and response headers returned by your server (like Content-Type, Content-Length).
