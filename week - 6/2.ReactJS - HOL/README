@@ -1,0 +1,102 @@
+#  Student Management Portal - StudentApp
+
+##  Objectives
+
+###  Explain React Components
+React components are independent, reusable pieces of UI. They let you split the UI into isolated pieces that can be rendered separately.
+
+---
+
+###  Differences Between Components and JavaScript Functions
+
+| React Components             | JavaScript Functions            |
+|------------------------------|---------------------------------|
+| Return JSX (UI)              | Return data or perform logic    |
+| Can maintain internal state  | Do not have state by default    |
+| Use lifecycle methods        | No lifecycle management         |
+
+---
+
+###  Types of Components
+1. Class Components
+2. Function Components
+
+---
+
+###  Explain Class Component
+- Uses ES6 class syntax
+- Can hold state and lifecycle methods
+'```jsx
+import React, { Component } from 'react';
+
+class Home extends Component {
+  render() {
+    return <h2>Welcome to the Home page of Student Management Portal</h2>;
+  }
+}'
+
+---
+
+###  Explain Function Component
+
+A **function component** in React is a plain JavaScript function that returns JSX (HTML-like syntax). It’s the simplest way to define a component.
+
+**Example:**
+'```jsx
+function Welcome() {
+  return <h1>Hello, welcome to React!</h1>;
+}'
+
+Does not have its own state (before React 16.8).
+Can use hooks like useState() and useEffect() (from React 16.8 onwards).
+Ideal for simple and presentational components.
+
+---
+
+## Define Component Constructor
+
+The **constructor** is a special method used in class components to:
+
+* Initialize state
+* Bind methods to the component
+
+**Syntax:**
+
+jsx
+Copy
+Edit
+constructor(props) {
+  super(props);
+  this.state = {
+    name: 'StudentApp'
+  };
+}
+Note: super(props) is required to access this.props in the constructor.
+
+---
+
+## Define render() Function
+
+The **render() function** is mandatory in class components. It returns the JSX that should be displayed on the screen.
+
+**Example:**
+
+jsx
+Copy
+Edit
+class Home extends React.Component {
+  render() {
+    return <h2>Welcome to the Home page</h2>;
+  }
+}
+
+**Key Points:**
+
+Can return only one parent element (use a <div> or <> fragment wrapper).
+
+Is called whenever the component’s state or props change.
+
+---
+
+
+

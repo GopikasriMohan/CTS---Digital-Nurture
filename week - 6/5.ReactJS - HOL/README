@@ -1,0 +1,34 @@
+# cohort dashboard
+
+##  Objectives
+
+---
+
+###  Understanding the Need for Styling React Components
+
+Styling in React is essential to build visually appealing, responsive, and user-friendly interfaces. It helps to:
+- Improve user experience
+- Organize and format content clearly
+- Convey branding, meaning, and state (e.g., color for status)
+
+React allows several ways to style components, such as:
+- Traditional CSS
+- Inline styles
+- CSS Modules
+- Styled-components (via third-party libraries)
+
+Here, we explore **CSS Modules** and **inline styles**.
+
+---
+
+###  Working with CSS Modules and Inline Styles
+
+**CSS Modules** allow scoped styling, meaning styles defined in one component won’t affect others. This prevents class name collisions and makes component-level styling modular and manageable.
+
+**Inline styles** are useful for applying dynamic styles conditionally using JavaScript logic.
+
+> Example in this project:
+> - CSS Module is used for layout and card styling (`.box` class).
+> - Inline style is used to apply color based on cohort status or category.
+
+This combination ensures clean design and flexibility while keeping the components reusable and easy to maintain.

@@ -1,0 +1,52 @@
+#  BlogApp  (ReactJS Hands-on Lab)
+
+##  Objectives
+
+---
+
+###  Explain the Need and Benefits of Component Life Cycle
+
+React components go through a series of phases during their existence — mounting, updating, and unmounting. These phases are known as the **component life cycle**.
+
+**Need for Life Cycle:**
+- To perform specific actions during component phases (e.g., data fetching, cleanup, error handling)
+- To control how and when a component renders
+- To make components more predictable and efficient
+
+**Benefits:**
+- Enables data loading right after component mounts
+- Helps manage resources (e.g., event listeners or API calls)
+- Provides error handling via lifecycle hooks
+- Offers better control over performance and user experience
+
+---
+
+###  Identify Various Life Cycle Hook Methods
+
+React class components support the following key lifecycle methods:
+
+| Phase         | Lifecycle Methods                                  | Purpose                                        |
+|---------------|----------------------------------------------------|------------------------------------------------|
+| Mounting      | `constructor()`, `componentDidMount()`             | Setup initial state, fetch data                |
+| Updating      | `shouldComponentUpdate()`, `componentDidUpdate()`  | Control updates, respond to prop/state changes |
+| Unmounting    | `componentWillUnmount()`                           | Clean up (e.g., timers, listeners)             |
+| Error Handling| `componentDidCatch()`, `getDerivedStateFromError()`| Catch and handle errors gracefully             |
+
+> - `componentDidMount()` – to load posts after component mounts  
+> - `componentDidCatch()` – to handle and alert errors
+
+---
+
+###  List the Sequence of Steps in Rendering a Component
+
+Here is the standard rendering sequence for a **class component**:
+
+1. `constructor()` – Initialize state
+2. `render()` – Return JSX to display
+3. `componentDidMount()` – Triggered after first render
+4. User interaction/state/props change → `render()` is called again
+5. If an error occurs → `componentDidCatch()` is triggered
+
+This sequence ensures that components can handle setup, updates, and errors in an organized way.
+
+---
