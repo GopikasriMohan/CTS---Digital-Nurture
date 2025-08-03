@@ -1,0 +1,59 @@
+#  ReactJS Event Handling Lab – `eventexamplesapp`
+
+##  Objectives
+
+### 1. Explain React Events
+
+React uses its own event system called **Synthetic Events**, which wraps around native browser events to ensure cross-browser compatibility and consistent behavior.
+
+- These events work similarly to DOM events (like `click`, `change`, `submit`), but are normalized for React.
+- React events are triggered using JSX syntax inside components.
+
+jsx
+<button onClick={handleClick}>Click Me</button>
+
+---
+
+### 2. Explain About Event Handlers
+
+Event handlers are functions that execute when an event occurs on an element (like a click or keypress).
+- In React, handlers are passed as props in camelCase.
+- You can define them as methods inside a class or as functions inside a functional component.
+
+jsx
+function handleClick() {
+  alert('Button was clicked!');
+}
+
+return <button onClick={handleClick}>Click</button>;
+
+---
+
+### 3. Define Synthetic Event
+
+A SyntheticEvent is React’s cross-browser wrapper for native browser events. It provides a consistent API across different browsers.
+- All events in React (like onClick, onChange, onSubmit) use SyntheticEvent under the hood.
+- Synthetic events can be used just like native ones.
+
+jsx
+const handleClick = (event) => {
+  console.log("Synthetic event triggered:", event.type); // Output: click
+};
+
+
+---
+
+### 4. Identify React Event Naming Convention
+
+React uses camelCase for event names instead of the lowercase names used in HTML.
+
+| HTML DOM Event | React Event  |
+|----------------|--------------|
+| `onclick`      | `onClick`    |
+| `onchange`     | `onChange`   |
+| `onsubmit`     | `onSubmit`   |
+| `onmouseover`  | `onMouseOver`|
+React event names are written in camelCase.
+
+---
+

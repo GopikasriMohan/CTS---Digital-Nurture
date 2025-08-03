@@ -1,0 +1,131 @@
+#  ReactJS ES6 Hands-On Lab – `cricketapp`
+
+##  Objectives 
+
+### 1.  List the Features of ES6
+
+- Block-scoped variables: `let` and `const`
+- Arrow functions
+- Classes and inheritance
+- Template literals
+- Default parameters
+- Destructuring assignment
+- Spread and rest operators
+- Modules (import/export)
+- Promises
+- `map()`, `set()`, `WeakMap`, `WeakSet`
+
+---
+
+### 2.  Explain JavaScript `let`
+
+- `let` allows you to declare **block-scoped variables**.
+- Unlike `var`, `let` does **not hoist** the variable to the top of the function.
+- Used when the variable value might change.
+
+js
+let score = 50;
+score = 70; // Valid
+
+---
+
+### 3. Identify the Differences Between var and let
+
+-------------------------------------------------------------------------------------
+|Feature	        |  var	                             | let                        |
+|-----------------|------------------------------------|----------------------------|
+|Scope	          | Function-scoped	                   | Block-scoped               |
+|-----------------|------------------------------------|----------------------------|
+|Hoisting	        | Hoisted (initialized as undefined) | Hoisted (not initialized)  |
+|-----------------|------------------------------------|----------------------------|
+|Redeclaration    | Allowed	                           | Not allowed in same scope  |
+|-----------------|------------------------------------|----------------------------|
+|Use Case	        | Old JavaScript (ES5)	             | Modern JavaScript (ES6)    |
+-------------------------------------------------------------------------------------
+
+---
+
+### 4.  Explain JavaScript const
+
+* const declares constants.
+* Value cannot be reassigned.
+* Block-scoped like let.
+* Arrays and objects declared with const can still have their contents modified, but not reassigned.
+
+js
+const name = "Virat";
+// name = "Rohit";  Error
+
+---
+
+### 5.  Explain ES6 Class Fundamentals
+
+* class keyword allows creation of object blueprints.
+* Includes constructor() and methods.
+* Easy to organize code and create instances.
+
+js
+class Player {
+  constructor(name, score) {
+    this.name = name;
+    this.score = score;
+  }
+
+  display() {
+    return `${this.name} scored ${this.score}`;
+  }
+}
+
+---
+
+### 6.  Explain ES6 Class Inheritance
+
+* extends allows a class to inherit from another.
+* super() is used to call the parent constructor.
+
+js
+class Cricketer extends Player {
+  constructor(name, score, team) {
+    super(name, score);
+    this.team = team;
+  }
+}
+
+---
+
+### 7.  Define ES6 Arrow Functions
+
+* Shorter syntax for writing functions.
+* Does not bind its own this.
+* Commonly used in callbacks like map() and filter().
+
+js
+const add = (a, b) => a + b;
+
+const players = [60, 80, 45];
+const below70 = players.filter(score => score < 70);
+
+---
+
+### 8.  Identify set() and map()
+
+**Set**
+* Stores unique values only.
+* No duplicates allowed.
+
+js
+const ids = new Set();
+ids.add(1);
+ids.add(2);
+ids.add(1); // Duplicate ignored
+
+**Map**
+* Stores key-value pairs.
+* Keys can be any type (not just strings).
+
+js
+const playerMap = new Map();
+playerMap.set("Virat", 95);
+playerMap.set("Rohit", 88);
+
+---

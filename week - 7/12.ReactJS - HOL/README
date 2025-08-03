@@ -1,0 +1,57 @@
+# ReactJS Hands-on Lab: Conditional Rendering
+
+##  Objectives
+
+### 1. Explain Conditional Rendering in React
+
+Conditional rendering allows you to render different components or elements based on specific conditions. React uses JavaScript logic (like `if`, ternary operator `? :`, logical `&&`) to dynamically control what gets displayed in the UI.
+
+**Example:**
+
+jsx
+{isLoggedIn ? <UserPage /> : <GuestPage />}
+
+---
+
+### 2. Define Element Variables
+
+* Element variables let you store JSX expressions in variables and render them conditionally.
+* They help avoid repeating code and make the JSX cleaner when dealing with complex conditional logic.
+
+**Example:**
+
+jsx
+let button;
+if (isLoggedIn) {
+  button = <LogoutButton />;
+} else {
+  button = <LoginButton />;
+}
+
+return (
+  <div>
+    {button}
+  </div>
+);
+
+---
+
+### 3. Explain How to Prevent Components from Rendering
+
+Sometimes, a component should not render at all. In React, you can prevent rendering by returning null from the component or using short-circuit evaluation.
+
+**Examples:**
+
+***Returning null from a component:***
+jsx
+function Notification({ show }) {
+  if (!show) return null;
+  return <div>You have new messages!</div>;
+}
+
+***Using short-circuit evaluation:***
+jsx
+{showNotification && <Notification />}
+This ensures <Notification /> is only rendered when showNotification is true.
+
+---

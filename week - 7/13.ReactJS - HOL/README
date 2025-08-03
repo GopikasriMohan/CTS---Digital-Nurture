@@ -1,0 +1,98 @@
+#  ReactJS Hands-on Lab
+
+##  Objectives
+
+###  1. Explain Various Ways of Conditional Rendering
+
+In React, **conditional rendering** allows components to render differently based on application state. This can be achieved through multiple JavaScript techniques:
+
+- **`if-else` statements**: Useful for assigning JSX to variables before returning.
+- **Ternary operator (`condition ? true : false`)**: Good for inline decisions inside JSX.
+- **Logical AND (`&&`)**: Renders the right-hand side component if the left-hand condition is true.
+- **Returning `null`**: Prevents a component from rendering at all.
+- **Switch statements**: Used when multiple exclusive conditions need to be handled.
+
+These methods allow developers to show or hide content dynamically, improving UI responsiveness and user experience.
+
+---
+
+###  2. Explain How to Render Multiple Components
+
+React applications often require rendering multiple components in one layout. This can be done by:
+- Embedding multiple components inside a single parent using JSX:
+  
+  jsx
+  return (
+    <div>
+      <Header />
+      <MainContent />
+      <Footer />
+    </div>
+  );
+* Mapping over arrays of data to render repeated component structures.
+* Wrapping components in fragments (<>...</>) to avoid extra DOM nodes.
+Rendering multiple components helps to build modular and reusable UIs, each handling specific responsibilities.
+
+---
+
+### 3. Define List Component
+
+A List component in React is used to render a collection of similar items dynamically. It usually accepts data (e.g., an array of objects) as props and maps each item into a visual element.
+
+**Example:**
+
+jsx
+function ItemList({ items }) {
+  return (
+    <ul>
+      {items.map(item => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+List components improve scalability by minimizing code repetition and encouraging reuse.
+
+---
+
+### 4. Explain About Keys in React Applications
+
+Keys are special string attributes you should include when creating lists of elements in React. They help React identify which items have changed, been added, or removed, which improves rendering efficiency.
+
+* Keys must be unique among siblings.
+* Prefer stable and unique values like database IDs.
+* Avoid using array indexes as keys unless no better option exists.
+
+Using keys correctly helps React optimize re-rendering and maintain component state properly across renders.
+
+---
+
+### 5. Explain How to Extract Components with Keys
+
+React allows you to extract list items into their own components for readability and reuse. When doing this, you should still pass and apply the key prop to the outermost element in the extracted component:
+
+jsx
+function ListItem({ value }) {
+  return <li>{value}</li>;
+}
+
+function ItemList({ items }) {
+  return items.map(item => (
+    <ListItem key={item.id} value={item.name} />
+  ));
+}
+This preserves React’s ability to track each item’s position in the list accurately.
+
+---
+
+### 6. Explain React Map and map() Function
+The map() function is a built-in JavaScript method used to transform arrays. In React, it is commonly used to generate lists of components from data:
+
+jsx
+const students = ['Ana', 'John', 'Sara'];
+const studentItems = students.map(name => <li key={name}>{name}</li>);
+React’s declarative nature makes map() a powerful tool for rendering repeated UI elements from arrays (e.g., cards, rows, items, etc.).
+
+Best Practice: Always include a key prop when rendering components inside a map() loop.
+
+---

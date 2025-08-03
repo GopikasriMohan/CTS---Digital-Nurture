@@ -1,0 +1,94 @@
+#  ReactJS JSX Hands-On Lab – `officespacerentalapp`
+
+##  Objectives
+
+###  1. Define JSX
+
+- **JSX** (JavaScript XML) is a syntax extension for JavaScript used in React to describe UI.
+- It looks similar to HTML and allows embedding HTML-like tags in JavaScript code.
+
+jsx
+const heading = <h1>Welcome to React</h1>;
+
+---
+
+### 2. Explain about ECMAScript
+
+- ECMAScript (ES) is the standard specification that defines JavaScript.
+- ES6 and newer versions introduced modern JavaScript features like:
+    * let, const
+    * Arrow functions
+    * Classes
+    * Modules
+    * Destructuring
+    * Promises
+
+---
+
+### 3. Explain React.createElement()
+
+* It is a React API used to create virtual DOM elements without JSX.
+* JSX is syntactic sugar for React.createElement().
+
+js
+React.createElement('h1', { className: 'title' }, 'Hello')
+is equivalent to:
+
+jsx
+<h1 className="title">Hello</h1>
+
+---
+
+### 4. Explain How to Create React Nodes with JSX
+
+* React nodes are created using JSX elements.
+* These nodes represent UI components and are part of the virtual DOM.
+
+jsx
+const element = <p>This is a paragraph.</p>;
+
+---
+
+### 5. Define How to Render JSX to DOM
+
+* Use ReactDOM.createRoot() and root.render() to mount JSX onto the real DOM.
+
+jsx
+import ReactDOM from 'react-dom/client';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+---
+
+### 6. Explain How to Use JavaScript Expressions in JSX
+
+* Wrap JavaScript expressions in {} to embed them in JSX.
+
+jsx
+const price = 50000;
+return <p>Rent: ₹{price}</p>;
+You can use variables, functions, or inline operations.
+
+---
+
+### 7. Explain How to Use Inline CSS in JSX
+
+* Inline CSS is applied using an object with camelCase properties.
+* The style object is passed to the style attribute.
+
+jsx
+const style = {
+  color: 'green',
+  fontSize: '18px'
+};
+
+return <p style={style}>Styled Text</p>;
+
+For conditional styling:
+jsx
+<p style={{ color: rent < 60000 ? 'red' : 'green' }}>
+  Rent: ₹{rent}
+</p>
+
+
+---
